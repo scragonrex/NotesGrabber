@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
+    // const port = "http://localhost:3000";
+    const port = "https://notesgrabberbackend.onrender.com";
     let navigate = useNavigate();
     const [credentials, setCredentials] = useState({email:"", password:""});
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch(`${port}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
