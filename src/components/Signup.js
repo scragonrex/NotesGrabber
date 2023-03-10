@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Signup = (props) => {
-   // const port = "http://localhost:3000";
+  //  const port = "http://localhost:3000";
    const port = "https://notesgrabberbackend.onrender.com";
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({name:"", email:"", password:"",cpassword:""});
