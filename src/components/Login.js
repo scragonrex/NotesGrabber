@@ -8,7 +8,7 @@ const Login = (props) => {
     const [credentials, setCredentials] = useState({email:"", password:""});
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`${port}/api/auth/login`, {
+        const response = await fetch("https://notesgrabberbackend.onrender.com/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
