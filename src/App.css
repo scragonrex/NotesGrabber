@@ -1,3 +1,26 @@
 i{
   cursor:pointer;
 }
+
+.linkHover{
+  text-decoration: none;
+  transition: 0.3s;
+}
+.linkHover:hover {
+  font-size: large;
+}
+
+.fa-circle-plus{
+  color: #0d6efd;
+  transition: 0.3s;
+}
+.fa-circle-plus:hover{
+  color: rgb(16, 13, 172);
+  transform: scale(1.3);
+}
+.fa-trash, .fa-pen-to-square {
+  transition: 0.3s;
+}
+.fa-trash:hover, .fa-pen-to-square:hover{
+  transform: scale(1.5);
+}

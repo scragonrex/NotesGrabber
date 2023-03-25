@@ -13,7 +13,7 @@ function Navbar() {
     navigate('/login');
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary" style={{boxShadow:"0px 3px 10px 0px"}}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">NotesGrabber</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
