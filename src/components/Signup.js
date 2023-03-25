@@ -10,9 +10,10 @@ const Signup = (props) => {
     if(credentials.password!==credentials.cpassword)
     {
       props.showAlert("Invalid password", "danger");
-      return;
     }
-    const {name, email, password} = credentials;
+    else
+    {
+      const {name, email, password} = credentials;
     e.preventDefault();
     setIsLoading(true);
     const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/createuser", {
@@ -35,6 +36,7 @@ const Signup = (props) => {
     }
     else
     props.showAlert("Invalid credentials", "danger");
+  }
 }
   const handleChange = (e) => {
     
