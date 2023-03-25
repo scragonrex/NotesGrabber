@@ -7,6 +7,11 @@ const Signup = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    if(credentials.password!=credentials.cpassword)
+    {
+      props.showAlert("Invalid password", "danger");
+      return;
+    }
     const {name, email, password} = credentials;
     e.preventDefault();
     setIsLoading(true);
