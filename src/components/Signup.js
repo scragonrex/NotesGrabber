@@ -7,7 +7,8 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     const {name, email, password} = credentials;
     e.preventDefault();
-    const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/createuser", {
+    // const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/createuser", {
+    const response = await fetch("http://localhost:5000/api/auth/createuser", {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -16,13 +17,15 @@ const Signup = (props) => {
     });
     const json = await response.json();
     console.log(json);
-    if(json.success)
+    if(json.success==="ok")
     {
         //Save the authtoken and redirect
         localStorage.setItem('token', json.authToken);
         navigate('/');
         props.showAlert("Account created successfully", "success");
     }
+    else if(json.success==="exist")
+    props.showAlert("Account already exist!", "warning");
     else
     props.showAlert("Invalid credentials", "danger");
 }
