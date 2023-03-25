@@ -35,13 +35,8 @@ const Signup = (props) => {
         navigate('/');
         props.showAlert("Account created successfully", "success");
     }
-<<<<<<< HEAD
     else props.showAlert("Invalid credentials", "danger");
-=======
-    else
-    props.showAlert("Invalid credentials", "danger");
   }
->>>>>>> t1
 }
   const handleChange = (e) => {
     
