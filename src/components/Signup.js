@@ -7,14 +7,15 @@ const Signup = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if(credentials.password!==credentials.cpassword)
     {
       props.showAlert("Invalid password", "danger");
+      navigate('/signup');
     }
     else
     {
       const {name, email, password} = credentials;
-    e.preventDefault();
     setIsLoading(true);
     const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/createuser", {
     // const response = await fetch("http://localhost:5000/api/auth/createuser", {
