@@ -16,7 +16,7 @@ const Signup = (props) => {
     });
     const json = await response.json();
     console.log(json);
-    if(json.success)
+    if(json.success==="ok")
     {
         //Save the authtoken and redirect
         localStorage.setItem('token', json.authToken);
