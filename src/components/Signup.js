@@ -23,6 +23,8 @@ const Signup = (props) => {
         navigate('/');
         props.showAlert("Account created successfully", "success");
     }
+    else if(json.success==="exist")
+    props.showAlert("Account already exist!", "warning");
     else
     props.showAlert("Invalid credentials", "danger");
 }
