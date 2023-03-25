@@ -7,7 +7,7 @@ const Signup = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    if(credentials.password!=credentials.cpassword)
+    if(credentials.password!==credentials.cpassword)
     {
       props.showAlert("Invalid password", "danger");
       return;
