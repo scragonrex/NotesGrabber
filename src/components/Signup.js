@@ -16,17 +16,14 @@ const Signup = (props) => {
     });
     const json = await response.json();
     console.log(json);
-    if(json.success==="ok")
+    if(json.success)
     {
         //Save the authtoken and redirect
         localStorage.setItem('token', json.authToken);
         navigate('/');
         props.showAlert("Account created successfully", "success");
     }
-    else if(json.success==="exist")
-    props.showAlert("Account already exist!", "warning");
-    else
-    props.showAlert("Invalid credentials", "danger");
+    else props.showAlert("Invalid credentials", "danger");
 }
   const handleChange = (e) => {
     
