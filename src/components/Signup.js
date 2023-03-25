@@ -4,10 +4,21 @@ import { useNavigate } from 'react-router-dom';
 const Signup = (props) => {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({name:"", email:"", password:"",cpassword:""});
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e) => {
-    const {name, email, password} = credentials;
     e.preventDefault();
+    if(credentials.password!==credentials.cpassword)
+    {
+      props.showAlert("Invalid password", "danger");
+      navigate('/signup');
+    }
+    else
+    {
+      const {name, email, password} = credentials;
+    setIsLoading(true);
     const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/createuser", {
+    // const response = await fetch("http://localhost:5000/api/auth/createuser", {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -15,6 +26,7 @@ const Signup = (props) => {
         body: JSON.stringify({ name, email, password })
     });
     const json = await response.json();
+    setIsLoading(false);
     console.log(json);
     if(json.success)
     {
@@ -23,14 +35,32 @@ const Signup = (props) => {
         navigate('/');
         props.showAlert("Account created successfully", "success");
     }
+<<<<<<< HEAD
     else props.showAlert("Invalid credentials", "danger");
+=======
+    else
+    props.showAlert("Invalid credentials", "danger");
+  }
+>>>>>>> t1
 }
   const handleChange = (e) => {
     
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
 }
+
+if(isLoading)
+return(
+    <div class="d-flex justify-content-center">
+<div class="spinner-border" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+</div>
+);
+
   return (
-    <div className='container'>
+    <div className="container" style={{width:"100%", height:"70vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <div className="container mt-5" style={{width:"40%", height:"114%", boxShadow:"0px 3px 8px 0px grey", borderRadius:'10px', padding:"20px"}}>
+    <h3>Create your Account</h3>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="name" className="form-label">Name</label>
@@ -49,8 +79,9 @@ const Signup = (props) => {
           <label htmlFor="cpassword" className="form-label">Confirm Password</label>
           <input type="password" className="form-control" value={credentials.cpassword} required minLength={5} name='cpassword' id="cpassword" onChange={handleChange} />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Signup</button>
       </form>
+    </div>
     </div>
   )
 }

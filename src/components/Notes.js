@@ -7,7 +7,8 @@ function Notes(props) {
   let navigate = useNavigate();
   const context = useContext(noteContext);
   const { notes, getNote, editNote} = context;
-  const [note, setNote] = useState({id:"", etitle:"", edescription:"", etag:""})
+  const [note, setNote] = useState({id:"", etitle:"", edescription:"", etag:""});
+  const [isAdd, setIsAdd] = useState(false);
   useEffect(() => {
     if(localStorage.getItem('token'))
     getNote();
@@ -40,7 +41,7 @@ function Notes(props) {
 
   return (
     <>
-      <AddNote showAlert={props.showAlert}/>
+      {/* <AddNote showAlert={props.showAlert}/> */}
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
       </button>
@@ -74,7 +75,7 @@ function Notes(props) {
           </div>
         </div>
       </div>
-      <div className='row my-2'>
+      <div className='row'>
         <h2>Your Notes</h2>
         <div className="container mx-1">
           {notes.length===0 && 'No notes available'}
@@ -85,6 +86,8 @@ function Notes(props) {
           })
         }
       </div>
+      <i className="fa-solid fa-circle-plus fa-3x mt-4" onClick={()=>setIsAdd(!isAdd)}></i>
+      {isAdd && <AddNote showAlert={props.showAlert}/>}
     </>
   )
 }
