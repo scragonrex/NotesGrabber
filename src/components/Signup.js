@@ -53,24 +53,24 @@ return(
 );
 
   return (
-    <div className="container" style={{width:"100%", height:"70vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
-    <div className="container mt-5" style={{width:"40%", height:"114%", boxShadow:"0px 3px 8px 0px grey", borderRadius:'10px', padding:"20px"}}>
+    <div style={{width:"100%", height:"70vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <div className="formCont">
     <h3>Create your Account</h3>
-      <form onSubmit={handleSubmit}>
-      <div className="mb-3">
+      <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", gap:"1rem", fontSize:"0.8rem"}}>
+      <div>
           <label htmlFor="name" className="form-label">Name</label>
           <input type="text" className="form-control" value={credentials.passwprd} name='name' id="name" onChange={handleChange} />
         </div>
-        <div className="mb-3">
+        <div>
           <label htmlFor="email" className="form-label">Email address</label>
           <input type="email" className="form-control" value={credentials.email} id="email" name='email' aria-describedby="emailHelp" onChange={handleChange} />
           <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
-        <div className="mb-3">
+        <div>
           <label htmlFor="password" className="form-label">Password</label>
           <input type="password" className="form-control" value={credentials.password} required minLength={5} name='password' id="password" onChange={handleChange} />
         </div>
-        <div className="mb-3">
+        <div>
           <label htmlFor="cpassword" className="form-label">Confirm Password</label>
           <input type="password" className="form-control" value={credentials.cpassword} required minLength={5} name='cpassword' id="cpassword" onChange={handleChange} />
         </div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, {useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
@@ -46,7 +46,7 @@ const Login = (props) => {
 
     return (
         <div style={{width:"100%", height:"70vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <div className="formCont">
+        <div className="formCont mt-4">
             <h3 className='heading'>Login</h3>
         <form style={{display:"flex", flexDirection:"column", gap:"1rem", fontSize:"0.8rem"}}onSubmit={handleSubmit}>
             <div>

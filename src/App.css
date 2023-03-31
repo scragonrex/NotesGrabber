@@ -8,7 +8,7 @@ i {
 }
 
 .linkHover:hover {
-  font-size: large;
+  font-size: 1rem;
 }
 
 @media (max-width: 630px){
