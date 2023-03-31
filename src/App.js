@@ -29,13 +29,13 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Alert alert={alert}/>
-    <div className="container">
+    <>
     <Routes>
       <Route path="/" element={<Home showAlert={showAlert}/>} />
       <Route path="/login" element={<Login showAlert={showAlert}/>} />
       <Route path="/signup" element={<Signup showAlert={showAlert}/>} />
     </Routes>
-    </div>
+    </>
   </BrowserRouter>
   </NotesState>
   </>
