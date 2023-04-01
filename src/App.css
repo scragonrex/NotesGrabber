@@ -19,6 +19,9 @@ i {
 .fa-circle-plus {
   color: #0d6efd;
   transition: 0.3s;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .fa-circle-plus:hover {

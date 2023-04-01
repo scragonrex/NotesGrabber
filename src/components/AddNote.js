@@ -16,7 +16,7 @@ const AddNote = (props) => {
         setNote({...note,[e.target.name]: e.target.value})
     }
     return (
-        <div className="container my-3 p-4" style={{borderRadius:"1rem", boxShadow:"0px 3px 8px 0px grey"}}>
+        <div className="container my-5 p-4" style={{borderRadius:"1rem", boxShadow:"0px 3px 8px 0px grey"}}>
             <h2>Add Notes</h2>
             <form className='my-4'>
                 <div className="mb-3">

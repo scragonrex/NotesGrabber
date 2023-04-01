@@ -8,8 +8,8 @@ const Login = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/login", {
-        // const response = await fetch("http://localhost:5000/api/auth/login", {
+        // const response = await fetch("https://notesgrabbert1.onrender.com/api/auth/login", {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
