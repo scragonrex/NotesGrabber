@@ -60,7 +60,7 @@ function Notes(props) {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">Description</label>
-                  <input type="text" className="form-control" id="edescription" name="edescription" onChange={handleChange} value={note.edescription} minLength={5} required/>
+                  <textarea type="text" className="form-control" id="edescription" name="edescription" onChange={handleChange} value={note.edescription} minLength={5} required/>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="tag" className="form-label">Tag</label>
@@ -75,16 +75,18 @@ function Notes(props) {
           </div>
         </div>
       </div>
-      <div className='row'>
+      <div className='mt-4'>
         <h2>Your Notes</h2>
         <div className="container mx-1">
           {notes.length===0 && 'No notes available'}
         </div>
+        <div className='d-flex flex-wrap gap-3'>
         {
           notes.map((note) => {
             return <NoteItem key={note._id} note={note} showAlert={props.showAlert} updateNote={updateNote} />
           })
         }
+        </div>
       </div>
       <i className="fa-solid fa-circle-plus fa-3x mt-4" onClick={()=>setIsAdd(!isAdd)}></i>
       {isAdd && <AddNote showAlert={props.showAlert}/>}

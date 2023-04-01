@@ -16,8 +16,8 @@ const AddNote = (props) => {
         setNote({...note,[e.target.name]: e.target.value})
     }
     return (
-        <div className="container my-3">
-            <h1>Add Notes</h1>
+        <div className="container my-3 p-4" style={{borderRadius:"1rem", boxShadow:"0px 3px 8px 0px grey"}}>
+            <h2>Add Notes</h2>
             <form className='my-4'>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
@@ -25,7 +25,7 @@ const AddNote = (props) => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label">Description</label>
-                    <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={handleChange} minLength={5} required />
+                    <textarea type="text" rows='4' className="form-control" id="description" name="description" value={note.description} onChange={handleChange} minLength={5} required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label">Tag</label>
